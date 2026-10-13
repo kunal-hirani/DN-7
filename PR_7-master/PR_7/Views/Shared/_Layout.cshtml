@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My Feedback Portal</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+
+    <header style="border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px;">
+        <h2>My Feedback Portal</h2>
+
+        <nav style="background-color: #f1f1f1; padding: 10px; margin-top: 10px; border: 1px solid #ddd;">
+            @Html.ActionLink("Home", "Index", "Home", null, new { style = "margin-right: 15px; text-decoration: none; color: #333; font-weight: bold;" }) |
+
+            @Html.ActionLink("Submit Feedback", "Create", "Feedback", null, new { style = "margin: 0 15px; text-decoration: none; color: #333; font-weight: bold;" }) |
+
+            @Html.ActionLink("About Us", "About", "Home", null, new { style = "margin-left: 15px; text-decoration: none; color: #333; font-weight: bold;" })
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer style="border-top: 1px solid #ccc; padding-top: 10px; margin-top: 40px;">
+        <p>&copy; @DateTime.Now.Year - Simple Feedback System</p>
+    </footer>
+
+</body>
+</html>

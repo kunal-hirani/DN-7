@@ -1,0 +1,31 @@
+﻿@model FeedbackApp.Models.Feedback
+
+@{
+    ViewBag.Title = "Submit Feedback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>We value your feedback</h3>
+
+@using (Html.BeginForm("Create", "Feedback", FormMethod.Post))
+{
+    <div style="margin-bottom: 15px;">
+        @Html.LabelFor(m => m.Name)<br />
+        @Html.TextBoxFor(m => m.Name)
+        <span style="color:red; font-size:12px;">@Html.ValidationMessageFor(m => m.Name)</span>
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        @Html.LabelFor(m => m.Rating) (1 to 5)<br />
+        @Html.TextBoxFor(m => m.Rating, new { type = "number", min = "1", max = "5" })
+        <span style="color:red; font-size:12px;">@Html.ValidationMessageFor(m => m.Rating)</span>
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        @Html.LabelFor(m => m.Description)<br />
+        @Html.TextAreaFor(m => m.Description, new { rows = "4", cols = "30" })
+        <span style="color:red; font-size:12px;">@Html.ValidationMessageFor(m => m.Description)</span>
+    </div>
+
+    <button type="submit">Submit</button>
+}

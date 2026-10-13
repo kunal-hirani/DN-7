@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Success";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="color: green;">Submission Successful!</h3>
+
+@Html.Partial("_SuccessMessage")
+
+<br />
+
+@Html.ActionLink("Add Another Feedback", "Create", "Feedback")

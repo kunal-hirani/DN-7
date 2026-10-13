@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Welcome to the Feedback Portal</h3>
+
+<p>Your opinion matters to us. We use your feedback to improve our services and deliver a better experience for everyone.</p>
+
+<div style="margin-top: 30px;">
+    @Html.ActionLink("Click Here to Share Your Thoughts", "Create", "Feedback", null, new { style = "background-color: #333; color: white; padding: 10px 15px; text-decoration: none; border-radius: 3px;" })
+</div>
